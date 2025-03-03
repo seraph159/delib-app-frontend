@@ -40,8 +40,8 @@ const handleSubmit = async (event: React.FormEvent) => {
         }
 
         const endpoint = role === 'librarian' 
-            ? 'http://localhost:8080/api/auth/librarian/register'
-            : 'http://localhost:8080/api/auth/client/register';
+            ? `${import.meta.env.VITE_APP_API_URL}/api/auth/librarian/register`
+            : `${import.meta.env.VITE_APP_API_URL}/api/auth/client/register`;
             
         const response = await axios.post(endpoint, data);
         
